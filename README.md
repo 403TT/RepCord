@@ -21,3 +21,18 @@
 3. Give the bot a ***name*** and a ***description***
 #### !!!Discord BOT Token!!!! ###
 You can generate or get a new bot token by navigating to the **Bot** menu - Reset Token
+
+### Scopes / Bot Permissions ###
+This can be setup in Developer Portal > your application > OAUTH2 > URL Generator
+**Scopes**
+1. bot
+2. applications.commands
+
+**Bot Permissions**
+1. Manage Roles
+2. Send Messages
+3. Manage Messages
+4. Embed links
+5. Read Message History
+6. 
+7. Embed Links
