@@ -24,6 +24,7 @@ You can generate or get a new bot token by navigating to the **Bot** menu - Rese
 
 ### Scopes / Bot Permissions ###
 This can be setup in Developer Portal > your application > OAUTH2 > URL Generator
+
 **Scopes**
 1. bot
 2. applications.commands
@@ -34,5 +35,9 @@ This can be setup in Developer Portal > your application > OAUTH2 > URL Generato
 3. Manage Messages
 4. Embed links
 5. Read Message History
-6. 
+
+Obtain the **Generated URL** - copy and paste it into your web browser and then add the bot to your chosen server.
+
+
+
 7. Embed Links
