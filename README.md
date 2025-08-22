@@ -14,3 +14,10 @@
 4. Finally, you can start installing discord.js
    Run | **npm installl discord.js**
 
+
+### Creating Discord Bot ###
+1. Access the [Discord Developer Portal](https://discord.com/developers/applications) and log into your discord account
+2. Click on "New Application" to start creating your bot
+3. Give the bot a ***name*** and a ***description***
+#### !!!Discord BOT Token!!!! ###
+You can generate or get a new bot token by navigating to the **Bot** menu - Reset Token
