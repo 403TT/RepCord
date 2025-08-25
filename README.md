@@ -42,6 +42,9 @@ Obtain the **Generated URL** - copy and paste it into your web browser and then 
 ### Storing Sensitive Data in a .env ###
 1. Use **.env** to store environment variables. ```npm install dotenv```
    Ignoring config.json for this project
+2. With **.gitignore** you can select which files should be ignored by Git so your secrets don't get pushed
+
+3. 
 
 
 
