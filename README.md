@@ -39,12 +39,9 @@ This can be setup in Developer Portal > your application > OAUTH2 > URL Generato
 
 Obtain the **Generated URL** - copy and paste it into your web browser and then add the bot to your chosen server.
 
-### Storing Sensitive Data in a config.json ###
-1. Create a config.json file in your project folder and enter:
-   {
-      "token": {ENTER_TOKEN}
-   }
-
+### Storing Sensitive Data in a .env ###
+1. Use **.env** to store environment variables. ```npm install dotenv```
+   Ignoring config.json for this project
 
 
 
