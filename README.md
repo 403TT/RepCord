@@ -1,4 +1,5 @@
 # RepCord
+Following guide from: [Discord.js Guide](https://discordjs.guide/#before-you-begin)
 
 ## Requirements / Infrastructure ##
 - Ubuntu Server 24.04.2 LTS
@@ -44,8 +45,27 @@ Obtain the **Generated URL** - copy and paste it into your web browser and then 
    Ignoring config.json for this project
 2. With **.gitignore** you can select which files should be ignored by Git so your secrets don't get pushed
 
-3. 
+## Creating the Main File ~~! ###
+Discord JS follows the config.json route - For my project, I decided to utilise the dotenv approach as it is more secure.
 
+Base Code: 
+
+```js
+require("dotenv").config();         // Utilises the dotenv package and allows the .env file to load into the app
+                                    // Also allows everything inside .env available in process.env
+
+const { Client, GatewayIntentBits, Events } = require("discord.js");
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds] }); // Required for discord.js to work. Discord refers servers as "Guilds"
+
+client.once(Events.ClientReady, (client)  => {            // Changed to ClientReady for modern workflow
+    console.log(`Logged in as ${client.user.tag}`);
+});
+
+client.login(process.env.DISCORD_TOKEN); // Login using the .env token via client.login()
+```
+If everything is correct - you can run ```node index.js``` in your terminal to start the application.
+If you see 'Ready', then everything is working so far!
 
 
 
