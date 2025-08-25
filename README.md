@@ -1,1 +1,76 @@
 # RepCord
+Following guide from: [Discord.js Guide](https://discordjs.guide/#before-you-begin)
+
+## Requirements / Infrastructure ##
+- Ubuntu Server 24.04.2 LTS
+- Discord.js
+- Node.js
+
+### Preparation ###
+1. Install Node.js - follow this link to install: [Node.js](https://nodejs.org/en/download)
+2. Create a project folder on your system and access via Terminal
+3. Run | ```npm init``` - This will create a *** package.json *** file which is used to keep track of dependencies for your project
+   Optionally - you can run | ```npm init -y``` (this will autofill your
+   information)
+4. Finally, you can start installing discord.js
+   Run | ```npm installl discord.js```
+5. Create a .gitignore file (IF YOU ARE USING Git). In the file add your file name or location + file name
+
+
+### Creating Discord Bot ###
+1. Access the [Discord Developer Portal](https://discord.com/developers/applications) and log into your discord account
+2. Click on "New Application" to start creating your bot
+3. Give the bot a ***name*** and a ***description***
+#### !!!Discord BOT Token!!!! ###
+You can generate or get a new bot token by navigating to the **Bot** menu - Reset Token
+
+### Scopes / Bot Permissions ###
+This can be setup in Developer Portal > your application > OAUTH2 > URL Generator
+
+**Scopes**
+1. bot
+2. applications.commands
+
+**Bot Permissions**
+1. Manage Roles
+2. Send Messages
+3. Manage Messages
+4. Embed links
+5. Read Message History
+
+Obtain the **Generated URL** - copy and paste it into your web browser and then add the bot to your chosen server.
+
+### Storing Sensitive Data in a .env ###
+1. Use **.env** to store environment variables. ```npm install dotenv```
+   Ignoring config.json for this project
+2. With **.gitignore** you can select which files should be ignored by Git so your secrets don't get pushed
+
+## Creating the Main File ~~! ###
+Discord JS follows the config.json route - For my project, I decided to utilise the dotenv approach as it is more secure.
+
+Base Code: 
+
+```js
+require("dotenv").config();         // Utilises the dotenv package and allows the .env file to load into the app
+                                    // Also allows everything inside .env available in process.env
+
+const { Client, GatewayIntentBits, Events } = require("discord.js");
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds] }); // Required for discord.js to work. Discord refers servers as "Guilds"
+
+client.once(Events.ClientReady, (client)  => {            // Changed to ClientReady for modern workflow
+    console.log(`Logged in as ${client.user.tag}`);
+});
+
+client.login(process.env.DISCORD_TOKEN); // Login using the .env token via client.login()
+```
+If everything is correct - you can run ```node index.js``` in your terminal to start the application.
+If you see 'Ready', then everything is working so far!
+
+
+
+
+
+
+
+
